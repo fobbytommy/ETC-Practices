@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+	<head>
+		<meta charset="utf-8">
+		<title>Blizzmate</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	</head>
+	<body>
+		<div ng-controller="MainController">
+			<div id="cover" class="block">
+				<h1>cover</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href=""ng-click="gotoAnchor('games')">games</a></li>
+					<li><a href=""ng-click="gotoAnchor('addGame')">addGame</a></li>
+					<li><a href=""ng-click="gotoAnchor('instruction')">instruction</a></li>
+					<li><a href=""ng-click="gotoAnchor('about')">about</a></li>
+				</ul>
+			</nav>
+			<div class="container">
+				<div id="games" class="block">
+					<h2>games</h2>
+					<a href="" ng-click="gotoAnchor('cover')">go back to top</a>
+				</div>
+				<div id="addGame" class="block">
+					<h2>add game</h2>
+					<a href="" ng-click="gotoAnchor('cover')">go back to top</a>
+				</div>
+				<div id="instruction" class="block">
+					<h2>instruction</h2>
+					<a href="" ng-click="gotoAnchor('cover')">go back to top</a>
+				</div>
+				<div id="about" class="block">
+					<h2>about</h2>
+					<a href="" ng-click="gotoAnchor('cover')">go back to top</a>
+				</div>
+				<div id="footer" class="block">
+					<h2>footer</h2>
+					<a href="" ng-click="gotoAnchor('cover')">go back to top</a>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="/static/js/angular.min.js"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			var socket = io.connect();
+
+			app.run(['$anchorScroll', function($anchorScroll) {
+				$anchorScroll.yOffset = 20;
+			}]);
+
+			app.controller('MainController', ['$scope', '$anchorScroll', '$location', function($scope, $anchorScroll, $location) {
+				$scope.gotoAnchor = function(idName) {
+					if ($location.hash() !== idName) {
+						$location.hash(idName);
+					}
+					else {
+						$anchorScroll();
+					}
+				}
+			}]);
+		</script>
+	</body>
+</html>
