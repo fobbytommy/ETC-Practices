@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML References</title>
+		<style>
+			img {
+				height: 100px;
+			}
+		</style>
+
+		<!-- browser will look for the image at ./image/me.jpg -->
+		<base href="./image" target="_blank" />
+	</head>
+	<body>
+		<!-- This is a comment, which does not display in the browser -->
+
+		<div class="">
+			<h3>a tag</h3>
+			<a href="http://tommy-oh.com" target="_blank">click</a>
+		</div>
+		<div class="">
+			<h3>abbr tag</h3>
+			<abbr title="Hyper Text Markup Language">HTML</abbr>
+		</div>
+		<div class="">
+			<h3>address tag</h3>
+			<address>
+				Tommy Oh<br />
+				Full Stack Web Developer<br />
+				818-568-4095<br />
+			</address>
+		</div>
+		<div class="">
+			<h3>area tag</h3>
+			<img src="./image/me.jpg" alt="me" usemap="#tommy"/>
+			<map name="tommy">
+				<area shape="circle" coords="50,50,5" title="nose" />
+				<area shape="rect" coords="45,20,60,30" title="hair" />
+			</map>
+		</div>
+		<div class="">
+			<h3>article tag</h3>
+			<article>
+				<h4>This is the title</h4>
+				<p>
+					article should be independent and self-contained content.
+				</p>
+			</article>
+		</div>
+		<div class="">
+			<h3>aside tag</h3>
+			<p>
+				My initial is T.O.
+			</p>
+			<aside>
+				<h4>T.O.</h4>
+				<p>
+					Tommy Oh
+				</p>
+			</aside>
+		</div>
+		<div class="">
+			<h3>audio tag</h3>
+			<audio id="audio" controls loop>
+				<source src="./music.mp3" type="audio/mpeg">
+				Your brower does not support the audio tag.
+			</audio>
+		</div>
+		<div class="">
+			<h3>bold tag</h3>
+			<p>
+				this is normal paragraph, but <b>these texts are in bold</b>.
+			</p>
+		</div>
+		<div class="">
+			<h3>base tag</h3>
+			<!-- it is defined in the head tag -->
+			<p>
+				defined in the head tag
+			</p>
+		</div>
+		<div class="">
+			<h3>bdi (bi-directional isolation) tag</h3>
+			<ul>
+				<li>Tommy <bdi>타미</bdi> Oh</li>
+			</ul>
+		</div>
+		<div class="">
+			<h3>bdo (bi-directional override) tag</h3>
+			<bdo dir="rtl">Tommy Oh</bdo>
+		</div>
+
+		<script type="text/javascript">
+			document.getElementById('audio').volume = 0.2;
+		</script>
+	</body>
+</html>
