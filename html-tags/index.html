@@ -7,6 +7,16 @@
 			img {
 				height: 100px;
 			}
+			div {
+				border: 1px solid blue;
+				padding: 5px 10px;
+			}
+			.col2 {
+				background-color: blue;
+			}
+			#col3 {
+				background-color: yellow;
+			}
 		</style>
 
 		<!-- browser will look for the image at ./image/me.jpg -->
@@ -90,7 +100,151 @@
 			<h3>bdo (bi-directional override) tag</h3>
 			<bdo dir="rtl">Tommy Oh</bdo>
 		</div>
-
+		<div class="">
+			<h3>blockquote tag</h3>
+			<blockquote cite="http://tommy-oh.com/#/me">
+				 I'm a perfectionist who cares most about his projects. I can't wait to put myself out there and show everyone how good I am. I have nothing to lose and I'm not scared of anything.
+			</blockquote>
+		</div>
+		<div class="">
+			<h3>br tag</h3>
+			<p>
+				This text has a break. <br />
+				there you go.
+			</p>
+		</div>
+		<div class="">
+			<h3>button tag</h3>
+			<button type="button" onclick="alert('button clicked')">Click Me!</button>
+		</div>
+		<div class="">
+			<h3>caption tag</h3>
+			<table>
+				<caption>Caption Tag is For Table Title</caption>
+				<thead>
+					<tr>
+						<th>Month</th>
+						<th>Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>September</td>
+						<td>$100</td>
+					</tr>
+					<tr>
+						<td>October</td>
+						<td>$80</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="">
+			<h3>cite tag</h3>
+			<p>
+				My favorite movie is <cite>Matrix</cite>.
+			</p>
+		</div>
+		<div class="">
+			<h3>code tag</h3>
+			<code>const tommy = say => 'he is awesome'</code>
+		</div>
+		<div class="">
+			<h3>col and colgroup tags</h3>
+			<table>
+				<caption>col / colgroup Table</caption>
+				<colgroup>
+					<col style="background-color: red"></col>
+					<col class="col2"></col>
+					<col id="col3"></col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>Title 1</th>
+						<th>Title 2</th>
+						<th>Title 3</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>row 1 col 1</td>
+						<td>row 1 col 2</td>
+						<td>row 1 col 3</td>
+					</tr>
+					<tr>
+						<td>row 2 col 1</td>
+						<td>row 2 col 2</td>
+						<td>row 2 col 3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="">
+			<h3>datalist tag</h3>
+			<form>
+				<input type="search" list="languages">
+				<datalist id="languages">
+					<option>JavaScript</option>
+					<option>Python</option>
+					<option>C#</option>
+					<option>Ruby</option>
+				</datalist>
+				<input type="submit">
+			</form>
+		</div>
+		<div class="">
+			<h3>dl dt dd tags</h3>
+			<dl>
+				<dt>JavaScript</dt>
+				<dd>amazing language</dd>
+				<dt>React</dt>
+				<dd>View JS library that is PURE JavaScript (and JSX)!</dd>
+			</dl>
+		</div>
+		<div class="">
+			<h3>del tag</h3>
+			<p>
+				My favorite color is <del>red</del> <ins>purple</ins>.
+			</p>
+		</div>
+		<div class="">
+			<h3>details tag</h3>
+			<details close>
+				<summary>About Tommy Oh</summary>
+				<p>
+					he likes to run
+				</p>
+				<p>
+					he LOVES JavaScript!
+				</p>
+			</details>
+		</div>
+		<div class="">
+			<h3>dfn tag</h3>
+			<p>
+				<dfn><abbr title="HyperText Markup Lanage">HTML</abbr></dfn> is the standard markup language for creating web pages.
+			</p>
+		</div>
+		<div class="">
+			<h3>dialog tag</h3>
+			<dialog open>This is dialog tag</dialog>
+		</div>
+		<div class="">
+			<h3>em tag</h3>
+			<p>
+				Normal text and <em>emphasized text</em>
+			</p>
+		</div>
+		<div class="">
+			<h3>fieldset tag</h3>
+			<form>
+				<fieldset>
+					<legend>fieldset practice</legend>
+					<input type="text" placeholder="name">
+					<input type="submit">
+				</fieldset>
+			</form>
+		</div>
 		<script type="text/javascript">
 			document.getElementById('audio').volume = 0.2;
 		</script>
