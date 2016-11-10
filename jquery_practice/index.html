@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery</title>
+		<script type="text/javascript" src="./jquery.min.js"></script>
+		<script type="text/javascript">
+
+			function h3_handler() {
+				$('h3').click(function() {
+					console.log('hello');
+				});
+			}
+
+			$(document).ready(function() {
+				$('.hide').click(function() {
+					$(this).siblings('p').hide(2000);
+				});
+				$('.show').click(function() {
+					$(this).siblings('p').show(2000, function() {
+						alert("it's completed");
+					});
+				});
+				$('.toggle').click(function() {
+					$(this).siblings('p').toggle(2000, function() {
+						alert("it's completed");
+					});
+				});
+				$('.slideDown').click(function() {
+					$(this).siblings('p').slideDown(2000);
+				});
+				$('.slideUp').click(function() {
+					$(this).siblings('p').slideUp(2000);
+				});
+				$('.makeRed').click(function() {
+					$(this).siblings('p').addClass('red');
+				});
+				$('.removeRed').click(function() {
+					$(this).siblings('p').removeClass('red');
+				})
+				$('p').hover(function() {
+					$(this).css('background-color', 'red');
+					// $(this).after('<h2>hello too!</h2>');
+				}, function() {
+					$(this).css('background-color', 'blue');
+				});
+				$('div.manipulation').click(function() {
+					// $(this).append('<h2>I appened something!</h2>');
+					// $(this).text('text is in effect!');
+					var myHtml = $(this).html();
+					console.log(myHtml);
+					// $(this).prepend('<h2>I prepened something!</h2>');
+
+				});
+				$('form').submit(function(e) {
+					console.log( $( this ).serializeArray() );
+					console.log($(this).children('#search').val());
+					$(this).children('#search').val('hello');
+
+					e.preventDefault();
+				});
+				$('h2').hover(function() {
+					$(this).attr('class', 'blue');
+				}, function() {
+					$(this).attr('class', 'red');
+				});
+				$('.createHello').click(function() {
+					$(this).parent().append("<h3>hello</h3>");
+					h3_handler();
+				});
+				// $('h3').click(function() {
+				// 	console.log('hello');
+				// });
+				// $(document).on('click', 'h3', function() {
+				// 	console.log('its working!');
+				// });
+
+			});
+		</script>
+		<style media="screen">
+			div.main {
+				border: 1px solid black;
+			}
+			.red {
+				color: red;
+			}
+			.blue {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<h2>hide and show</h2>
+			<button type="button" class="hide">Hide</button>
+			<button type="button" class="show">Show</button>
+			<button type="button" class="toggle">toggle</button>
+			<button type="button" class="slideDown">slideDown</button>
+			<button type="button" class="slideUp">slideUp</button>
+			<button type="button" class="makeRed">Add Red</button>
+			<button type="button" class="removeRed">Remove Red</button>
+			<p>
+				hello
+			</p>
+			<div class="manipulation">
+				<p>
+					manipulation
+				</p>
+			</div>
+			<form>
+				<input type="search" name="search" id="search" placeholder="search">
+				<button type="submit">Search</button>
+			</form>
+			<h2 class="red">Hello</h2>
+		</div>
+		<div class="main">
+			<button type="button" class="createHello">Create Hello</button>
+		</div>
+	</body>
+</html>
