@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Promise</title>
+		<script type="text/javascript" src="./jquery.min.js"></script>
+		<script type="text/javascript" src="./scripts.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('button').click(function() {
+					Promise.all(arr).then(function(values) {
+						var htmlStr = "";
+						for (var i = 0; i < values.length; i++) {
+							htmlStr += "<p>" + values[i].first_name + "</p>";
+						}
+						$('.names').html(htmlStr);
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button type="button">Click to generate the name</button>
+		<div class="names">
+
+		</div>
+	</body>
+</html>
